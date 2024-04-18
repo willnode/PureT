@@ -80,11 +80,18 @@ CUDA_VISIBLE_DEVICES=0 python main_test.py --folder experiments_PureT/PureT_SCST
 If you find this repo useful, please consider citing (no obligation at all):
 ```
 @inproceedings{wangyiyu2022PureT,
-  title={End-to-End Transformer Based Model for Image Captioning},
-  author={Yiyu Wang and Jungang Xu and Yingfei Sun},
-  booktitle={AAAI},
-  year={2022}
+  author       = {Yiyu Wang and
+                  Jungang Xu and
+                  Yingfei Sun},
+  title        = {End-to-End Transformer Based Model for Image Captioning},
+  booktitle    = {Proceedings of the AAAI Conference on Artificial Intelligence},
+  pages        = {2585--2594},
+  publisher    = {{AAAI} Press},
+  year         = {2022},
+  url          = {https://ojs.aaai.org/index.php/AAAI/article/view/20160}, 
+  doi          = {10.1609/aaai.v36i3.20160},
 }
+
 ```
 
 ## Acknowledgements
