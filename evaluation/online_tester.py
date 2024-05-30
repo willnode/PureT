@@ -22,7 +22,15 @@ class OnlineTester(object):
         # './mscoco/txt/coco_val_image_id.txt'  Karpathy验证集  5K张图像
         # './mscoco/txt/coco_test_image_id.txt' Karpathy测试集  5K张图像
         # './mscoco/txt/coco_test4w_image_id.txt' MSCOCO在线测试集 4W张图像
-        self.eval_ids = np.array(utils.load_ids(eval_ids))
+        
+        # 读取txt文件，读取的为image_ids的list
+        # self.eval_ids = np.array(utils.load_ids(eval_ids))
+        
+        # 端到端训练时，直接读取annotation的json文件，其中包含了图像id和路径
+        # 读取json文件，读取的为{image_id: image_path}的dict
+        with open(eval_ids, 'r') as f:
+            self.ids2path = json.load(f)           # dict {image_id: image_path}
+            self.eval_ids = np.array(list(self.ids2path.keys()))  # array of str
         self.eval_loader = data_loader.load_val(eval_ids, gv_feat, att_feats)
 
     def make_kwargs(self, indices, ids, gv_feat, att_feats, att_mask):
@@ -55,6 +63,7 @@ class OnlineTester(object):
                     # 构造模型验证结果 {'image_id': ***, 'caption': 'word1 word2 word3 ...'}
                     result = {cfg.INFERENCE.ID_KEY: int(ids[sid]), cfg.INFERENCE.CAP_KEY: sent}
                     results.append(result)
+                    print(result)
 
         # 在线测试不需要评估，直接保存模型输出结果即可
         result_folder = os.path.join(cfg.ROOT_DIR, 'result')
