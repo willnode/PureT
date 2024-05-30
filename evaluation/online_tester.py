@@ -63,7 +63,6 @@ class OnlineTester(object):
                     # 构造模型验证结果 {'image_id': ***, 'caption': 'word1 word2 word3 ...'}
                     result = {cfg.INFERENCE.ID_KEY: int(ids[sid]), cfg.INFERENCE.CAP_KEY: sent}
                     results.append(result)
-                    print(result)
 
         # 在线测试不需要评估，直接保存模型输出结果即可
         result_folder = os.path.join(cfg.ROOT_DIR, 'result')
