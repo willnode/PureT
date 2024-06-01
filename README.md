@@ -1,9 +1,8 @@
 # PureT
 Implementation of __End-to-End Transformer Based Model for Image Captioning__ [[PDF/AAAI]](https://ojs.aaai.org/index.php/AAAI/article/view/20160) [[PDF/Arxiv]](https://arxiv.org/abs/2203.15350) [AAAI 2022]
 
-__NOTE: I am busy looking for a job and graduation thesis, maybe have no energy to reply issues, SORRY!!!__
-
-__NOTE: 作者最近在忙找工作以及毕业和新的工作，可能没太多精力回复issue，抱歉！！！__
++ Implementation of PureT using pre-extracted features. [PureT_F](https://github.com/232525/PureT_F)
++ Implementation of Image Captioning task (verbose). [Various miscellaneous codes] [ImageCaptioning_Verbose](https://github.com/232525/ImageCaptioning_Verbose)
 
 中文介绍请参考[README_CN.md](README_CN.md)
 
